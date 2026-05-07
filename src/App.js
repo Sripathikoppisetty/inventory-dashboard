@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
-const API = "https://healthcare-inventory-agent-production.up.railway.app";
+const API = "http://healthcare-inventory-agent-production.up.railway.app";
 
 export default function App() {
   const [summary, setSummary] = useState(null);
