@@ -141,7 +141,7 @@ export default function App() {
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#10b981", boxShadow: "0 0 8px #10b981" }} />
-          <spayle={{ fontSize: 12, color: "#10b981", fontWeight: 600 }}>Live</span>
+          <span style={{ fontSize: 12, color: "#10b981", fontWeight: 600 }}>Live</span>
         </div>
       </div>
 
