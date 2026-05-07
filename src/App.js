@@ -158,7 +158,8 @@ export default function App() {
         {tab === "overview" && (
           <div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16, marginBottom: 32 }}>
-              <StatCard icon="📦" title="Total SKUs" value={summary?.total_skus?.toLocaleString()} color="#3b82f6" subtitle="Active catalog items" trend="↑ 4,000 managed   <StatCard icon="⚠️" title="Below PAR" value={summary?.below_par_count?.toLocaleString()} color="#f59e0b" subtitle="Items needing reorder" trend={`${summary ? Math.round(summary.below_par_count/summary.total_skus*100) : 0}% of catalog`} />
+              <StatCard icon="📦" title="Total SKUs" value={summary?.total_skus?.toLocaleString()} color="#3b82f6" subtitle="Active catalog items" trend="↑ 4,000 managed" />
+              <StatCard icon="⚠" title="Below PAR" value={summary?.below_par_count?.toLocaleString()} color="#f59e0b" subtitle="Items needing reorder" trend={`${summary ? Math.round(summary.below_par_count/summary.total_skus*100) : 0}% of catalog`} />
               <StatCard icon="🔴" title="Stockouts" value={summary?.out_of_stock_count?.toLocaleString()} color="#ef4444" subtitle="Zero inventory" trend="Immediate action needed" />
               <StatCard icon="⏰" title="Expiring Soon" value={summary?.expiring_30d_count?.toLocaleString()} color="#ec4899" subtitle="Within 30 days" trend="FIFO action required" />
             </div>
