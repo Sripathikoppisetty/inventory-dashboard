@@ -153,7 +153,7 @@ export default function App() {
             <div style={{ background: "#111827", borderRadius: 20, padding: 24, border: "1px solid #1f2937", marginBottom: 20 }}>
               <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 16, color: "#9ca3af", textTransform: "uppercase", letterSpacing: 1 }}>ABC Class — Below PAR</div>
               <div style={{ display: "flex", gap: 16 }}>
-                {[["A", "#10b981", abcCounts.A], ["B", "#f59e0b", abcCounts.B], ["C", "#6b7280", abcCounts.C]].map(([cls, color, coun) => (
+                {[["A", "#10b981", abcCounts.A], ["B", "#f59e0b", abcCounts.B], ["C", "#6b7280", abcCounts.C]].map(([cls, color, count]) => (
                   <div key={cls} style={{ flex: 1, background: "#1f2937", borderRadius: 12, padding: 20, textAlign: "center", borderTop: "3px solid " + color }}>
                     <div style={{ fontSize: 28, fontWeight: 800, color: color }}>{count}</div>
                     <div style={{ fontSize: 12, color: "#6b7280", marginTop: 4 }}>Class {cls}</div>
