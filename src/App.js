@@ -46,25 +46,8 @@ export default function App() {
     setStreaming(true);
     setResponse("");
     try {
-      const res = await fetch(API + "/query/stream", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query }),
-      });
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder();
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        const chunk = decoder.decode(value);
-        for (const line of chunk.split("\n")) {
-          if (line.startsWith("data: ")) {
-            const data = line.slice(6);
-            if (data === "[DONE]") break;
-            if (!data.startsWith("[Error:")) setResponse(prev => prev + data);
-          }
-        }
-      }
+      const res = await axios.post(API + "/query", { query });
+      setResponse(res.data.response);
     } catch (e) {
       setResponse("Error: " + e.message);
     }
